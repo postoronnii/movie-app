@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import Counter from './components/CounterClass'
+import Counter from './components/CounterFun'
 import Genre from './components/Genre'
 import SearchForm from './components/SearchForm'
 

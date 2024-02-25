@@ -6,7 +6,9 @@ export default function Genre({ genres, selectedGenre, onSelect }) {
           return (
             <button
               key={index}
-              className={selectedGenre === index ? 'font-bold' : 'font-normal'}
+              className={`w-32 ${
+                selectedGenre === index ? 'font-bold' : 'font-normal'
+              }`}
               onClick={() => onSelect(index)}
             >
               {genre.toUpperCase()}

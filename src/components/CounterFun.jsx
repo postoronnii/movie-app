@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function CounterFun({ value }) {
+export default function Counter({ value }) {
   const [count, setCount] = useState(value)
 
   const increment = () => {
@@ -23,8 +23,13 @@ export default function CounterFun({ value }) {
             +
           </button>
           <button
+            disabled={count <= 0}
             onClick={decrement}
-            className="w-14 bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            className={`w-14 bg-transparent ${
+              count <= 0
+                ? 'cursor-not-allowed text-gray-400 border-gray-300'
+                : 'hover:bg-gray-500 hover:text-white hover:border-transparent'
+            } text-gray-700 font-semibold py-2 px-4 border border-gray-500 rounded`}
           >
             -
           </button>
