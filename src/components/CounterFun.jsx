@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export default function Counter({ value }) {
   const [count, setCount] = useState(value)
 
-  const increment = () => {
+  const increment = useCallback(() => {
     setCount((val) => val + 1)
-  }
+  }, [])
 
-  const decrement = () => {
+  const decrement = useCallback(() => {
     setCount((val) => val - 1)
-  }
+  }, [])
 
   return (
     <div className="flex">
