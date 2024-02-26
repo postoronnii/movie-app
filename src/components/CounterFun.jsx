@@ -4,11 +4,11 @@ export default function Counter({ value }) {
   const [count, setCount] = useState(value)
 
   const increment = () => {
-    setCount(count + 1)
+    setCount((val) => val + 1)
   }
 
   const decrement = () => {
-    setCount(count - 1)
+    setCount((val) => val - 1)
   }
 
   return (
