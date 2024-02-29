@@ -1,4 +1,4 @@
-import Menu from './elements/Menu'
+import MenuItem from './elements/MenuItem'
 
 export default function Genre({ genres, selectedGenre, onSelect }) {
   return (
@@ -6,7 +6,7 @@ export default function Genre({ genres, selectedGenre, onSelect }) {
       <div className="flex flex-wrap items-center justify-between max-w-7xl gap-5 m-auto text-xl text-gray-500 font-bold">
         {genres.map((genre) => {
           return (
-            <Menu
+            <MenuItem
               key={genre}
               genre={genre}
               selectedGenre={selectedGenre}

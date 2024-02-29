@@ -1,4 +1,4 @@
-export default function Menu({ genre, selectedGenre, onSelect }) {
+export default function MenuItem({ genre, selectedGenre, onSelect }) {
   return (
     <button
       key={genre}
