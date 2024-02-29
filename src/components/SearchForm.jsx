@@ -1,4 +1,4 @@
-export default function SearchForm({ onSearch, inputRef }) {
+export default function SearchForm({ onSearch, inputRef, initialValue }) {
   return (
     <div className="flex gap-3">
       <form onSubmit={onSearch} className="flex gap-3">
@@ -7,6 +7,7 @@ export default function SearchForm({ onSearch, inputRef }) {
           placeholder="What do you want to watch?"
           className="border px-2 w-[715px] h-[59px] bg-[#323232cc] rounded-md text-xl text-white"
           ref={inputRef}
+          defaultValue={initialValue}
         />
         <button
           type="submit"
