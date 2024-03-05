@@ -1,11 +1,12 @@
 import { fireEvent, render } from '@testing-library/react'
-import Counter from '../components/CounterFun'
+import Counter from '../components/counterFun'
 
 describe('Counter', () => {
   test('Component renders initial value provided in props', () => {
-    const passedValue = 3
+    const passedValue = '3'
     const { getByText } = render(<Counter value={passedValue} />)
-    const countElement = getByText(passedValue.toString())
+    expect(getByText(passedValue)).toBeInTheDocument()
+    const countElement = getByText(passedValue)
     expect(countElement).toBeInTheDocument()
   })
 

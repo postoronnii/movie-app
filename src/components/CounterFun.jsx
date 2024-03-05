@@ -14,15 +14,19 @@ export default function Counter({ value }) {
   return (
     <div className="flex">
       <div className="flex flex-col text-3xl items-center">
-        <p className="text-7xl font-bold pb-10">{count}</p>
+        <p className="text-7xl font-bold pb-10" id="count-counter-txt">
+          {count}
+        </p>
         <div className="flex flex-row gap-3">
           <button
+            id="increment-counter-btn"
             onClick={increment}
             className="w-14 bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
           >
             +
           </button>
           <button
+            id="decrement-counter-btn"
             disabled={count <= 0}
             onClick={decrement}
             className={`w-14 bg-transparent ${
