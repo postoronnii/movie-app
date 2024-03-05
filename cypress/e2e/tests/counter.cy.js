@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-// import { describe, it, beforeEach, cy } from 'cypress'
-
 describe('counter e2e test', () => {
   beforeEach(() => {
     cy.visit('http://localhost:5173')
