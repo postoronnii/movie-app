@@ -1,24 +1,21 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import Counter from './components/CounterFun'
+import { useState } from 'react'
 import Genre from './components/Genre'
 import SearchForm from './components/SearchForm'
+import Counter from './components/Counter'
 
 const movies = ['all', 'documentary', 'comedy', 'horror', 'crime']
 
 export default function App() {
   const [selectedGenre, setSelectedGenre] = useState(null)
-  const [search, setSearch] = useState('')
-  const inputRef = useRef(null)
+  const [value, setValue] = useState('')
 
-  const handleSearch = useCallback((e) => {
-    e.preventDefault()
-    if (inputRef.current.value === '') return
-    setSearch(inputRef.current.value)
-  }, [])
+  const onChange = (e) => {
+    setValue(e.target.value)
+  }
 
-  useEffect(() => {
-    console.log(search)
-  }, [search])
+  const onSearch = (value) => {
+    console.log(value)
+  }
 
   return (
     <div>
@@ -26,7 +23,7 @@ export default function App() {
         <Counter value={0} />
       </div>
       <div className="flex justify-center items-center pt-10">
-        <SearchForm onSearch={handleSearch} inputRef={inputRef} />
+        <SearchForm onChange={onChange} onSearch={onSearch} value={value} />
       </div>
       <div className="flex justify-center items-center pt-10">
         <Genre

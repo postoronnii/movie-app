@@ -2,7 +2,7 @@
 
 describe('counter e2e test', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:5173')
+    cy.visit('/')
   })
 
   it('Verify counter functionality', () => {

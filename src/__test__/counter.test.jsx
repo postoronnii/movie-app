@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react'
-import Counter from '../components/counterFun'
+import Counter from '../components/Counter'
 
 describe('Counter', () => {
   test('Component renders initial value provided in props', () => {
