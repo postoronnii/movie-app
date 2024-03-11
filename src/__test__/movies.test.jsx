@@ -1,37 +1,46 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import React from 'react'
+import { render, waitFor } from '@testing-library/react'
 import axios from 'axios'
 import Movies from '../components/Movies'
 
 jest.mock('axios')
 
-describe('Movies', () => {
-  test('renders Movies component without crashing', () => {
-    render(<Movies />)
+const mockMoviesData = {
+  data: [
+    {
+      id: 1,
+      title: 'Movie 1',
+      release_date: '2022-01-01',
+      genres: ['Action', 'Adventure'],
+    },
+    {
+      id: 2,
+      title: 'Movie 2',
+      release_date: '2022-02-01',
+      genres: ['Comedy', 'Drama'],
+    },
+  ],
+  totalAmount: 2,
+}
+
+describe('Movies component', () => {
+  beforeEach(() => {
+    axios.get.mockResolvedValueOnce({ data: mockMoviesData })
   })
 
-  test('displays the number of movies found', async () => {
-    const data = {
-      data: [
-        {
-          id: 1,
-          release_date: '2024-01-01',
-          genres: ['Action', 'Adventure'],
-        },
-        {
-          id: 2,
-          release_date: '2024-02-01',
-          genres: ['Comedy'],
-        },
-      ],
-      totalAmount: 2,
-    }
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
 
-    axios.get.mockResolvedValueOnce(data)
-
-    render(<Movies />)
+  it('Renders movies correctly', async () => {
+    const { getByText } = render(<Movies />)
 
     await waitFor(() => {
-      expect(screen.getByText('2')).toBeInTheDocument()
+      expect(getByText('2')).toBeInTheDocument()
+      expect(getByText('Movie 1')).toBeInTheDocument()
+      expect(getByText('Movie 2')).toBeInTheDocument()
+      expect(getByText('Action, Adventure')).toBeInTheDocument()
+      expect(getByText('Comedy, Drama')).toBeInTheDocument()
     })
   })
 })

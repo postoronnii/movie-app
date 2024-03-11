@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-
 import triangle from '../../images/triangle.svg'
 
-export default function ReleaseDate({ pic }) {
+const arr = ['Release Date', 'Title']
+
+export default function ReleaseDate() {
   const [open, setOpen] = useState(false)
-  const arr = ['Release Date', 'Title']
+
   return (
     <div className="flex flex-col">
       <button

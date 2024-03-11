@@ -8,7 +8,6 @@ export default function Header() {
   const onChange = (e) => {
     e.preventDefault()
     setValue(e.target.value)
-    console.log(e.target.value)
   }
 
   const onSearch = (value) => {
