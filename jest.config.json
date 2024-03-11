@@ -1,0 +1,8 @@
+{
+  "setupFilesAfterEnv": ["<rootDir>/src/test/setupTests.js"],
+  "testEnvironment": "jest-environment-jsdom",
+  "moduleNameMapper": {
+    "\\.(gif|ttf|eot|svg|png)": "<rootDir>/test/fileMock.js",
+    "\\.(css|less|scss)$": "identity-obj-proxy"
+  }
+}
