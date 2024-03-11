@@ -26,19 +26,3 @@ export default function App() {
     </>
   )
 }
-
-// <div>
-//   <div className="flex justify-center items-center ">
-//     <Counter value={0} />
-//   </div>
-//   <div className="flex justify-center items-center pt-10">
-//     <SearchForm onChange={onChange} onSearch={onSearch} value={value} />
-//   </div>
-//   <div className="flex justify-center items-center pt-10">
-//     <Genre
-//       genres={movies}
-//       selectedGenre={selectedGenre}
-//       onSelect={setSelectedGenre}
-//     />
-//   </div>
-// </div>
