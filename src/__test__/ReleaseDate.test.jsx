@@ -2,12 +2,15 @@ import { render, fireEvent } from '@testing-library/react'
 import ReleaseDate from '../components/elements/ReleaseDate'
 
 describe('ReleaseDate', () => {
-  it('renders without crashing', () => {
-    render(<ReleaseDate />)
+  const triangle = 'triangle.svg'
+  it('Renders without crashing', () => {
+    render(<ReleaseDate triangle={triangle} />)
   })
 
   it('Opens and closes the dropdown', () => {
-    const { getByText, queryByText } = render(<ReleaseDate />)
+    const { getByText, queryByText } = render(
+      <ReleaseDate triangle={triangle} />,
+    )
 
     expect(queryByText('Release Date')).not.toBeInTheDocument()
     expect(queryByText('Title')).not.toBeInTheDocument()

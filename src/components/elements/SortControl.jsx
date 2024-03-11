@@ -1,10 +1,11 @@
 import ReleaseDate from './ReleaseDate'
+import triangle from '../../images/triangle.svg'
 
 export default function SortControl() {
   return (
     <div className="flex gap-5">
       <p>SORT BY</p>
-      <ReleaseDate />
+      <ReleaseDate triangle={triangle} />
     </div>
   )
 }

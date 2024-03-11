@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import triangle from '../../images/triangle.svg'
 
 const arr = ['Release Date', 'Title']
 
-export default function ReleaseDate() {
+export default function ReleaseDate({ triangle }) {
   const [open, setOpen] = useState(false)
 
   return (
