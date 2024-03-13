@@ -13,7 +13,7 @@ export const Default = Template.bind({})
 Default.args = {
   movie: {
     title: 'Pulp Fiction',
-    poster_path: movie, // replace with your image url
+    poster_path: movie,
   },
   year: '1994',
   genres: 'Crime',
