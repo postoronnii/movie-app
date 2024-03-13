@@ -4,14 +4,15 @@ const arr = ['Release Date', 'Title']
 
 export default function ReleaseDate({ triangle }) {
   const [open, setOpen] = useState(false)
+  const [selected, setSelected] = useState(arr[0])
 
   return (
     <div className="flex flex-col">
       <button
-        className="flex gap-2 items-center relative"
+        className="flex gap-2 items-center relative uppercase"
         onClick={() => setOpen((prop) => !prop)}
       >
-        RELEASE DATE
+        {selected}
         <img src={triangle} alt="triangle" />
       </button>
       {open && (
@@ -21,7 +22,10 @@ export default function ReleaseDate({ triangle }) {
               <li
                 className="px-4 py-2 text-white hover:bg-[#F65261]"
                 key={i}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setSelected(i)
+                  setOpen(false)
+                }}
               >
                 {i}
               </li>

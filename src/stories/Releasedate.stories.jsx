@@ -5,11 +5,14 @@ import ReleaseDate from '../components/elements/ReleaseDate'
 export default {
   title: 'ReleaseDate',
   component: ReleaseDate,
+  argTypes: {
+    triangle: { control: 'text' },
+  },
 }
 
-const Template = (args) => <ReleaseDate />
+const Template = (args) => <ReleaseDate {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  pic: triangle, // replace with your image url
+  triangle,
 }

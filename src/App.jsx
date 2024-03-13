@@ -9,12 +9,10 @@ const movies = ['all', 'documentary', 'comedy', 'horror', 'crime']
 export default function App() {
   return (
     <>
-      <div className="flex flex-col bg-[#888888]">
-        <header>
-          <Header />
-        </header>
-        <main className="bg-[#232323]">
-          <div className="bg-[#888888] h-[10px]"></div>
+      <div className="flex flex-col bg-main-gray">
+        <Header />
+        <main className="bg-main-dark">
+          <div className="bg-main-gray h-2"></div>
           <Menu genres={movies} />
           <Movies />
         </main>
