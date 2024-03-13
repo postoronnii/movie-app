@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react'
-import SearchForm from '../components/SearchForm'
+import SearchForm from '../components/elements/SearchForm'
 
 describe('SearchForm component', () => {
   test('Component renders an input with the value equal to initial value passed in props', () => {
